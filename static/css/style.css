@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+body{
+    background-color: #eee;
+    margin: 0;
+    padding: 0;
+}
+.navbar {
+    position: fixed;
+    left: 0;
+    width: 3%;
+    background-color: #eee;
+    z-index: 999;
+    padding: 0;
+  }
+
+  
+  /* add media query so that the navbar button can be seen on phones */
+ 
+
+#side_nav{
+    background: #000;
+    min-width: 250px;
+    max-width: 250px;
+    overflow: hidden;
+}
+
+.speech-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background-color:#bb25b6;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  }
+  
+/* add a semi-transparent black color overlay */
+.bg-black:hover {
+    background-color: rgba(0, 0, 0, 0.5); 
+  }
+/* increase the brightness of the image */
+  img:hover {
+    filter: brightness(150%); 
+  }
+    
+.hide-nav{
+    display:none
+}
+
+
+form{
+    margin-top: 25px;
+}
+
+.content{
+    min-height: 100vh;
+    width: 100%;
+}
+.content-area.white-bg {
+    background-color: #eee;
+}
+
+.color-h{
+    border-top: 3px solid #eee;
+}
+
+.sidebar li.active{
+    background: #eee;
+    border-radius: 8px;
+}
+
+.sidebar li.active a, .sidebar li.active a:hover{
+    color:#000;
+}
+
+.sidebar li a{
+    color: #fff;
+}
+  
+  .main-container {
+    display: flex;
+    flex-direction: row-reverse; 
+  }
+  
+  h2 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 70px;
+    text-decoration: underline;
+    text-align: center;
+  }
+  
+  p {
+    font-family: 'Josefin Sans';
+    margin-left: 20px;
+    margin-right: 15px;
+    font-size: 30px;
+    line-height: 1.5;
+    text-align: center;
+  }
