@@ -4,11 +4,11 @@ body {
 
 .brand-logo {
   width: 10vw;
-  height: 8vh;
+  height: 10vh;
 }
 
 .custom-navbar{
-  background-color: #ad86ceeb;
+  background-color: #1974D2;
 }
 
 .custom-navbar .navbar-nav .nav-link {
