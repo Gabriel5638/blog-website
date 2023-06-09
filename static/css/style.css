@@ -1,104 +1,145 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
-
-body{
-    background-color: #eee;
-    margin: 0;
-    padding: 0;
+body {
+  background-color: #F9FAFC;
 }
-.navbar {
-    position: fixed;
-    left: 0;
-    width: 3%;
-    background-color: #eee;
-    z-index: 999;
-    padding: 0;
-  }
 
-  
-  /* add media query so that the navbar button can be seen on phones */
+.brand-logo {
+  width: 10vw;
+  height: 8vh;
  
-
-#side_nav{
-    background: #000;
-    min-width: 250px;
-    max-width: 250px;
-    overflow: hidden;
 }
 
-.speech-button {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 40px;
-  height: 40px;
-  background-color:#bb25b6;
-  color: #fff;
+.navbar{
+  color: #445261;
+}
+
+.red-o {
+  color: #E84610;
+}
+
+.thin {
+  font-weight: 300;
+}
+
+.light-bg {
+  background-color: #fff;
+}
+
+.dark-bg {
+  background-color: #445261;
+}
+
+.main-bg {
+  background-color: #F9FAFC;
+}
+
+.card {
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  }
-  
-/* add a semi-transparent black color overlay */
-.bg-black:hover {
-    background-color: rgba(0, 0, 0, 0.5); 
-  }
-/* increase the brightness of the image */
-  img:hover {
-    filter: brightness(150%); 
-  }
-    
-.hide-nav{
-    display:none
+  background-color: transparent;
 }
 
-
-form{
-    margin-top: 25px;
+.image-container {
+  position: relative;
 }
 
-.content{
-    min-height: 100vh;
-    width: 100%;
-}
-.content-area.white-bg {
-    background-color: #eee;
-}
-
-.color-h{
-    border-top: 3px solid #eee;
+.image-flash {
+  position: absolute;
+  bottom: 5%;
+  min-width: 30%;
+  left: -2px;
+  background-color: #23BBBB;
 }
 
-.sidebar li.active{
-    background: #eee;
-    border-radius: 8px;
+.author {
+  color: white;
+  margin: 4px;
+  text-transform: uppercase;
 }
 
-.sidebar li.active a, .sidebar li.active a:hover{
-    color:#000;
+.masthead {
+  margin-top: 10px;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  height: 33vh;
+  width: 100%;
 }
 
-.sidebar li a{
-    color: #fff;
+.masthead-text {
+  background-color: #445261;
+  color: white;
+  position: relative;
 }
-  
-  .main-container {
-    display: flex;
-    flex-direction: row-reverse; 
-  }
-  
-  h2 {
-    font-size: 50px;
-    font-weight: bold;
-    margin-bottom: 70px;
-    text-decoration: underline;
-    text-align: center;
-  }
-  
-  p {
-    font-family: 'Josefin Sans';
-    margin-left: 20px;
-    margin-right: 15px;
-    font-size: 30px;
-    line-height: 1.5;
-    text-align: center;
-  }
+
+.masthead-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.masthead-image:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 90%;
+  height: 100%;
+  width: 150%;
+  background: #445261;
+  -webkit-transform: skew(15deg);
+  -moz-transform: skew(15deg);
+  transform: skew(15deg);
+  z-index: 100;
+}
+
+.post-link {
+  text-decoration: none;
+  color: #445261;
+}
+
+.post-link:hover,
+.page-link {
+  color: #E84610;
+}
+
+.post-title {
+  margin-top: 20%;
+  margin-left: 5%;
+}
+
+.post-subtitle {
+  margin-left: 5%;
+  color: lightgray;
+}
+
+.btn-signup {
+  background-color: #23BBBB;
+  color: #fff;
+}
+
+.btn-signup:hover,
+.btn-signup:active {
+  background-color: #fff;
+  color: #23BBBB;
+}
+
+.link {
+  color: #23BBBB;
+  text-decoration: none;
+}
+
+.link:hover,
+.link:active {
+  color: #445261;
+  text-decoration: underline;
+}
+
+.btn-like {
+  color: #E84610;
+  border: none;
+  background: transparent;
+}
+
+.btn-like:hover,
+.btn-like:active {
+  color: #E84610;
+  background: transparent;
+  border: none;
+}

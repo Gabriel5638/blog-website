@@ -4,17 +4,9 @@
 
 <div class="container-fluid">
     <div class="row">
-        <!-- Navbar -->
-        <div class="col-lg-3">
-            <!--  sidebar content here -->
-            <!-- Replace this with  desired sidebar content -->
-            <div class="sidebar">
-                <!-- Sidebar content goes here -->
-            </div>
-        </div>
 
         <!-- Blog Entries Column -->
-        <div class="col-lg-9 mt-3">
+        <div class="col-12 mt-3 left">
             <div class="row">
                 {% for post in post_list %}
                 <div class="col-md-4">
@@ -23,9 +15,9 @@
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
                                 <img class="card-img-top"
-                                    src=""> <!-- Add own image src here and change navbar layout to match my own websites style-->
+                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}"> 
+                                <img class="card-img-top" src=" {{ post.featured_image.url }}">
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author">Author: {{ post.author }}</p>
