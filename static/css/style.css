@@ -5,11 +5,15 @@ body {
 .brand-logo {
   width: 10vw;
   height: 8vh;
- 
 }
 
-.navbar{
-  color: #445261;
+.custom-navbar{
+  background-color: #ad86ceeb;
+}
+
+.custom-navbar .navbar-nav .nav-link {
+  color: #fff;
+  font-size: 20px;
 }
 
 .red-o {
