@@ -10,6 +10,8 @@ body {
 .custom-navbar{
   background-color: #38b6ff;
   background-image: linear-gradient(to right, #38b6ff, #2a5778);
+  border-bottom: 3px solid #000;
+  border-top: 3px solid #000;
 }
 
 .custom-navbar .navbar-nav .nav-link {
