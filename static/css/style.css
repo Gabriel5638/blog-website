@@ -19,6 +19,12 @@ body {
   font-size: 20px;
 }
 
+.welcome-text {
+  font-weight: bold;
+  font-size: 20px;
+  color: #000;
+}
+
 .red-o {
   color: #E84610;
 }

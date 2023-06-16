@@ -51,9 +51,12 @@
                     </li>
                     {% endif %}
                 </ul>
-                <span class="navbar-text text-muted">
-                    USERNAME OF SIGNED IN PERSON GOES HERE
-                </span>
+                <!--welcome messege for user-->
+                {% if user.is_authenticated %}
+                <span class="welcome-text">
+                Welcome, {{ user.username }}
+            </span>
+            {% endif %}
             </div>
         </div>
     </nav>
