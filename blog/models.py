@@ -5,6 +5,12 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
+CATEGORIES = (
+    ("sports", "Sports"),
+    ("music", "Music"),
+    ("art", "Art"),
+)
+
 
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
@@ -18,8 +24,16 @@ class Post(models.Model):
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
+    category = models.CharField(
+        max_length=20,
+        choices=CATEGORIES,
+        default='sections'
+    )
     likes = models.ManyToManyField(
-        User, related_name='blogpost_like', blank=True)
+        User,
+        related_name='blogpost_like',
+        blank=True
+    )
 
     class Meta:
         ordering = ["-created_on"]

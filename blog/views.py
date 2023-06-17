@@ -73,3 +73,27 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+def sports_view(request):
+    sports_posts = Post.objects.filter(
+        category='sports',
+        status=1
+    ).order_by('-created_on')
+    return render(request, 'sports.html', {'posts': sports_posts})
+
+
+def music_view(request):
+    music_posts = Post.objects.filter(
+        category='music',
+        status=1
+    ).order_by('-created_on')
+    return render(request, 'music.html', {'posts': music_posts})
+
+
+def art_view(request):
+    art_posts = Post.objects.filter(
+        category='art',
+        status=1
+    ).order_by('-created_on')
+    return render(request, 'art.html', {'posts': art_posts})
