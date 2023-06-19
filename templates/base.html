@@ -36,27 +36,41 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">
+                            <i class="fas fa-home"></i> Home
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'sports' %}">Sports</a>
+                        <a class="nav-link" href="{% url 'sports' %}">
+                            <i class="fas fa-football-ball"></i> Sports
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'music' %}">Music</a>
+                        <a class="nav-link" href="{% url 'music' %}">
+                            <i class="fas fa-music"></i> Music
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'art' %}">Art</a>
+                        <a class="nav-link" href="{% url 'art' %}">
+                            <i class="fas fa-paint-brush"></i> Art
+                        </a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                        <a class="nav-link" href="{% url 'account_logout' %}">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                        <a class="nav-link" href="{% url 'account_signup' %}">
+                            <i class="fas fa-user-plus"></i> Register
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                        <a class="nav-link" href="{% url 'account_login' %}">
+                            <i class="fas fa-sign-in-alt"></i> Login
+                        </a>
                     </li>
                     {% endif %}
                 </ul>
