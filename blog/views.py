@@ -97,3 +97,11 @@ def art_view(request):
         status=1
     ).order_by('-created_on')
     return render(request, 'art.html', {'posts': art_posts})
+
+
+def gaming_view(request):
+    gaming_posts = Post.objects.filter(
+        category='gaming',
+        status=1
+    ).order_by('-created_on')
+    return render(request, 'gaming.html', {'posts': gaming_posts})
