@@ -79,12 +79,12 @@
                     </li>
                     {% endif %}
                 </ul>
-                <!--welcome message for user and post modal icon-->
+                <!--welcome message for user and post icon-->
                 {% if user.is_authenticated %}
                 <span class="welcome-text">
                     Welcome, {{ user.username }} 
                     <a href="#" class="icon-link" id="createPostButton" data-bs-toggle="modal" data-bs-target="#createPostModal">
-                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-edit fa-lg"></i>
                     </a>
                 </span>
             {% endif %}
