@@ -3,7 +3,10 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 
-STATUS = ((0, "Draft"), (1, "Published"))
+STATUS = (
+    (0, "Draft"),
+    (1, "Published"),
+)
 
 CATEGORIES = (
     ("sports", "Sports"),
@@ -13,6 +16,23 @@ CATEGORIES = (
 
 
 class Post(models.Model):
+    """
+    Represents a blog post.
+
+    Fields:
+    - title: The title of the post.
+    - slug: The unique slug for the post's URL.
+    - author: The author of the post (a foreign key to the User model).
+    - featured_image: The featured image of the post.
+    - excerpt: A brief summary or excerpt of the post.
+    - updated_on: The date and time when the post was last updated.
+    - content: The main content of the post.
+    - created_on: The date and time when the post was created.
+    - status: The status of the post (draft or published).
+    - category: The category of the post.
+    - likes: Users who liked the post.
+    """
+
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
@@ -46,8 +66,21 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE,
-                             related_name="comments")
+    """
+    Represents a comment on a blog post.
+
+    Fields:
+    - post: The related post (foreign key to the Post model).
+    - name: The name of the commenter.
+    - email: The email address of the commenter.
+    - body: The content of the comment.
+    - created_on: The date and time when the comment was created.
+    - approved: Indicates whether the comment has been approved or not.
+    """
+
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name="comments"
+    )
     name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()
