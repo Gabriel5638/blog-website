@@ -66,6 +66,9 @@
                             <i class="fas fa-sign-out-alt"></i> Logout
                         </a>
                     </li>
+                    <a class="nav-link" href="{% url 'create_posts' %}">
+                        <i class="fas fa-pen"></i> Post
+                      </a>
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_signup' %}">
