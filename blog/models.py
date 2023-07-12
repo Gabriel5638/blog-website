@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.template.defaultfilters import slugify
 
 
 STATUS = (
@@ -12,6 +13,7 @@ CATEGORIES = (
     ("sports", "Sports"),
     ("music", "Music"),
     ("art", "Art"),
+    ("gaming", "Gaming"), 
 )
 
 

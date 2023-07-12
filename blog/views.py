@@ -71,11 +71,11 @@ def create_posts(request):
     if request.method == 'POST':
         postitem_form = CreationForm(request.POST, request.FILES)
         if postitem_form.is_valid():
-            postitem_form.save()
-            messages.success(
-                request, 'You have successfully posted an item!'
-                )
-            return redirect(reverse('home'))
+            post = postitem_form.save(commit=False)
+            post.author_id = request.user.id  
+            post.save()
+            messages.success(request, 'You have successfully posted an item!')
+            return redirect('home')
     else:
         postitem_form = CreationForm()
 
