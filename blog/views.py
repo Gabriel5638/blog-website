@@ -6,6 +6,7 @@ from django.urls import reverse_lazy
 from .models import Post
 from .forms import CommentForm
 from .forms import CreationForm
+from django.contrib import messages
 
 
 class PostList(generic.ListView):

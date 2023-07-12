@@ -37,6 +37,8 @@ class Post(models.Model):
 
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
+    image_caption = models.CharField(max_length=200, default='')
+    image_credit = models.CharField(max_length=200, default='')
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts"
     )
