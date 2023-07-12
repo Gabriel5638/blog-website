@@ -7,6 +7,7 @@ from .models import Post
 from .forms import CommentForm
 from .forms import CreationForm
 from django.contrib import messages
+from django.shortcuts import redirect
 
 
 class PostList(generic.ListView):
