@@ -10,14 +10,15 @@ class CommentForm(forms.ModelForm):
 
 
 class CreationForm(forms.ModelForm):
-
+    image_caption = forms.CharField(max_length=200)
+    
     class Meta:
         model = Post
         fields = (
-            "title",
-            "featured_image",
-            "content",
-            "category",
+            'title',
+            'featured_image',
+            'content',
+            'category',
         )
 
     def __init__(self, *args, **kwargs):

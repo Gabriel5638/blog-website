@@ -1,13 +1,12 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
+from .models import Post
+from .forms import CommentForm, CreationForm
+from django.contrib import messages
 from django.views.generic.edit import DeleteView
 from django.urls import reverse_lazy
-from .models import Post
-from .forms import CommentForm
-from .forms import CreationForm
-from django.contrib import messages
-from django.shortcuts import redirect
+from django.contrib.auth.decorators import login_required
 
 
 class PostList(generic.ListView):
@@ -38,9 +37,9 @@ class PostDetail(View):
             },
         )
 
-    def post(self, request, slug, *args, **kwargs):
+    def post(self, request, post_slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
+        post = get_object_or_404(queryset, slug=post_slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
@@ -74,7 +73,7 @@ def create_posts(request):
         postitem_form = CreationForm(request.POST, request.FILES)
         if postitem_form.is_valid():
             post = postitem_form.save(commit=False)
-            post.author_id = request.user.id  
+            post.author_id = request.user.id  # Assign the author ID
             post.save()
             messages.success(request, 'You have successfully posted an item!')
             return redirect('home')
@@ -88,25 +87,15 @@ def create_posts(request):
     return render(request, "create_posts.html", context)
 
 
-class DeletePost(DeleteView):
-    model = Post
-    template_name = 'delete_post.html'
-    success_url = reverse_lazy('home')
-
-
-def about(request):
-    return render(request, "about.html")
-
-
 class PostLike(View):
-    def post(self, request, slug, *args, **kwargs):
-        post = get_object_or_404(Post, slug=slug)
+    def post(self, request, post_slug, *args, **kwargs):
+        post = get_object_or_404(Post, slug=post_slug)
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
         else:
             post.likes.add(request.user)
 
-        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+        return HttpResponseRedirect(reverse('post_detail', args=[post_slug]))
 
 
 def sports_view(request):
@@ -139,3 +128,4 @@ def gaming_view(request):
         status=1
     ).order_by('-created_on')
     return render(request, 'gaming.html', {'posts': gaming_posts})
+

@@ -1,18 +1,14 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
 {% block content %}
+<div class="container">
+  <h1>Create a New Post</h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ post_form|crispy }}
 
-<div class="container-fluid">
-    <h1 class="postitem-heading">Create a post</h1>
+    <button class="btn btn-primary" type="submit">Create Post</button>
+  </form>
 </div>
-
-{% if user.is_authenticated %}
-<div class=" row postitem-form">
-    <form method="post" class="col-md-4 card mx-auto" enctype='multipart/form-data'>
-        {% csrf_token %}
-        {{ postitem_form }}
-        <input type="submit" class="btn btn-register btn-lg" value="Post Item">
-    </form>
-</div>
-{% endif %}
-
 {% endblock %}
