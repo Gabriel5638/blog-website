@@ -25,39 +25,49 @@
 
 <div class="container">
     <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
+        <div class="col card mb-4 mt-3 left top">
             <div class="card-body">
                 <!-- The post content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
-                <p class="card-text ">
-                    {{ post.content | safe }}
+                <!-- Use the | safe and linebreaksbr filters inside the template tags -->
+                <p class="card-text">
+                    {{ post.content | safe | linebreaksbr }}
                 </p>
                 <div class="row">
-
                     <div class="col-1">
                         <strong>
+                            <!-- Like button code -->
                             {% if user.is_authenticated %}
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                                 {% csrf_token %}
                                 {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{ post.slug }}" class="btn-like"><i class="fas fa-heart"></i></button>
                                 {% else %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{ post.slug }}" class="btn-like"><i class="far fa-heart"></i></button>
                                 {% endif %}
                             </form>
                             {% else %}
                             <span class="text-secondary"><i class="far fa-heart"></i></span>
                             {% endif %}
-                        <!-- The number of likes goes before the closing strong tag -->
-                        <span class="text-secondary">{{ post.number_of_likes }} </span>
+                            <!-- The number of likes goes before the closing strong tag -->
+                            <span class="text-secondary">{{ post.number_of_likes }}</span>
                         </strong>
                     </div>
                     <div class="col-1">
                         {% with comments.count as total_comments %}
-                        <strong class="text-secondary"><i class="far fa-comments"></i>
-                            <!-- Our total_comments variable goes before the closing strong tag -->
-                            {{ total_comments }}</strong>
+                        <strong class="text-secondary"><i class="far fa-comments"></i>{{ total_comments }}</strong>
                         {% endwith %}
+                    </div>
+                    <div class="col-1">
+                        <!-- Custom share button code -->
+                        <strong>
+                            <a href="#" class="share-button"><i class="fas fa-share"></i></a>
+                            <div class="share-buttons" style="display: none;">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}" target="_blank" class="share-button"><i class="fab fa-facebook"></i></a>
+                                <a href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri }}" target="_blank" class="share-button"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.reddit.com/submit?url={{ request.build_absolute_uri }}" target="_blank" class="share-button"><i class="fab fa-reddit"></i></a>
+                                <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl={{ request.build_absolute_uri }}" target="_blank" class="share-button"><i class="fab fa-tumblr"></i></a>
+                            </div>
+                        </strong>
                     </div>
                 </div>
             </div>
@@ -69,7 +79,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-8 card mb-4  mt-3 ">
+        <div class="col-md-8 card mb-4 mt-3">
             <h3>Comments:</h3>
             <div class="card-body">
                 <!-- for loop inside the empty control tags to iterate through each comment in comments -->
@@ -78,7 +88,7 @@
                     <p class="font-weight-bold">
                         <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
                         {{ comment.name }}
-                        <span class=" text-muted font-weight-normal">
+                        <span class="text-muted font-weight-normal">
                             <!-- The comment's created date goes here -->
                             {{ comment.created_on }}
                         </span> wrote:
@@ -90,16 +100,14 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="col-md-4 card mb-4  mt-3 ">
+        <div class="col-md-4 card mb-4 mt-3">
             <div class="card-body">
-                <!-- For later -->
                 {% if commented %}
                 <div class="alert alert-success" role="alert">
                     Your comment is awaiting approval
                 </div>
                 {% else %}
                 {% if user.is_authenticated %}
-
                 <h3>Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
                 <form method="post" style="margin-top: 1.3em;">
@@ -114,5 +122,17 @@
     </div>
 </div>
 
-{% endblock content %}
+<script>
+    // Add event listener for the share button
+    const shareButton = document.querySelector('.share-button');
+    shareButton.addEventListener('click', toggleShareButtons);
 
+    // Function to toggle the display of share buttons
+    function toggleShareButtons(event) {
+        event.preventDefault();
+        const shareButtons = document.querySelector('.share-buttons');
+        shareButtons.style.display = shareButtons.style.display === 'none' ? 'block' : 'none';
+    }
+</script>
+
+{% endblock content %}

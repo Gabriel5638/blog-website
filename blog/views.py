@@ -26,6 +26,9 @@ class PostDetail(View):
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
 
+        # Get the absolute URL of the current post
+        post_url = request.build_absolute_uri(reverse('post_detail', args=[post.slug]))
+
         return render(
             request,
             "post_detail.html",
@@ -34,7 +37,8 @@ class PostDetail(View):
                 "comments": comments,
                 "commented": False,
                 "liked": liked,
-                "comment_form": CommentForm()
+                "comment_form": CommentForm(),
+                "post_url": post_url
             },
         )
 
@@ -56,6 +60,9 @@ class PostDetail(View):
         else:
             comment_form = CommentForm()
 
+        # Get the absolute URL of the current post
+        post_url = request.build_absolute_uri(reverse('post_detail', args=[post.slug]))
+
         return render(
             request,
             "post_detail.html",
@@ -64,9 +71,11 @@ class PostDetail(View):
                 "comments": comments,
                 "commented": True,
                 "comment_form": comment_form,
-                "liked": liked
+                "liked": liked,
+                "post_url": post_url
             },
         )
+
 
 
 def create_posts(request):
