@@ -77,7 +77,6 @@ class PostDetail(View):
         )
 
 
-
 def create_posts(request):
     if request.method == 'POST':
         postitem_form = CreationForm(request.POST, request.FILES)
