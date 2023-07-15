@@ -20,9 +20,15 @@ class PostList(generic.ListView):
 
 class TrendingPosts(generic.ListView):
     model = Post
-    queryset = Post.objects.filter(status=1).order_by('-likes')[:5]  
-    template_name = 'trending_posts.html' 
-    context_object_name = 'trending_posts' 
+    template_name = "trending_posts.html"
+    context_object_name = "trending_posts"
+    paginate_by = 6
+
+    def get_queryset(self):
+        # Retrieve the posts ordered by the number of likes they have received
+        queryset = Post.objects.annotate(num_likes=Count('likes')).filter(num_likes__gt=0).order_by('-num_likes')
+
+        return queryset
 
 
 class PostDetail(View):
