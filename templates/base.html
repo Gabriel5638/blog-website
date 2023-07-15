@@ -60,6 +60,11 @@
                             <i class="fas fa-paint-brush"></i> Art
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'trending_posts' %}">
+                            <i class="fas fa-fire"></i> Trending
+                        </a>
+                    </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">
@@ -68,7 +73,7 @@
                     </li>
                     <a class="nav-link" href="{% url 'create_posts' %}">
                         <i class="fas fa-pen"></i> Post
-                      </a>
+                    </a>
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_signup' %}">
@@ -82,12 +87,12 @@
                     </li>
                     {% endif %}
                 </ul>
-                <!--welcome message for user and post icon-->
+                <!-- Welcome message for the user -->
                 {% if user.is_authenticated %}
                 <span class="welcome-text">
                     Welcome, {{ user.username }} 
                 </span>
-            {% endif %}
+                {% endif %}
             </div>
         </div>
     </nav>
