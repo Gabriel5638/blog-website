@@ -10,8 +10,6 @@ class CommentForm(forms.ModelForm):
 
 
 class CreationForm(forms.ModelForm):
-    image_caption = forms.CharField(max_length=200)
-    
     class Meta:
         model = Post
         fields = (
