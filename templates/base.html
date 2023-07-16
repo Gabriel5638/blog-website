@@ -74,6 +74,11 @@
                     <a class="nav-link" href="{% url 'create_posts' %}">
                         <i class="fas fa-pen"></i> Post
                     </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'user_posts' %}">
+                            <i class="fas fa-user"></i> Your Posts
+                        </a>
+                    </li>
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_signup' %}">

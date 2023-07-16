@@ -9,6 +9,7 @@ from .forms import CreationForm
 from django.contrib import messages
 from django.shortcuts import redirect
 from django.db.models import Count
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class PostList(generic.ListView):
@@ -16,6 +17,18 @@ class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).annotate(like_count=Count('likes')).order_by("-like_count", "-created_on")
     template_name = "index.html"
     paginate_by = 6
+
+
+class UserPosts(LoginRequiredMixin, generic.ListView):
+    model = Post
+    template_name = 'user_posts.html'
+    context_object_name = 'user_posts'
+    paginate_by = 10
+
+    def get_queryset(self):
+        # Retrieve the posts created by the current user
+        queryset = Post.objects.filter(author=self.request.user).order_by('-created_on')
+        return queryset
 
 
 class TrendingPosts(generic.ListView):

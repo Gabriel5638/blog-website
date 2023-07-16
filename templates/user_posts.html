@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card mb-4">
+                <div class="image-container">
+                    {% if "placeholder" in post.featured_image.url %}
+                        <img class="card-img-top" src="https://www.tandempm.ie/wp-content/uploads/placeholder-80.png">
+                    {% else %}
+                        <img src="{{ post.featured_image.url }}" class="card-img-top" alt="Featured Image">
+                    {% endif %}
+                    <div class="image-flash">
+                        <p class="author">Author: {{ post.author }}</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title">{{ post.title }}</h2>
+                    <p class="card-text">{{ post.excerpt }}</p>
+                    <hr>
+                    <p class="card-text text-muted h6">{{ post.created_on|date:"H:i" }} <i class="far fa-heart"></i> {{ post.likes.count }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid delete-text col-sm-6 my-5 mx-auto card-body border border-danger">
+    <div class="row">
+        <h3 class="delete-heading">Deleting Post -> {{ post.item }}</h3>
+    </div>
+    <div class="row">
+        <form method="post">
+            {% csrf_token %}
+            <div class="delete-p">
+                <p>Are you sure you want to delete "{{ post.item }}"?</p>
+                <p>The entire post will be permanently deleted. </p>
+            </div>
+            <input type="submit" class="delete btn-lg" value="Delete">
+        </form>
+    </div>
+</div>
+
+{% if deleted %}
+<div class="container">
+    <div id="delete-message" class="alert alert-success mt-3" role="alert">
+        Post "{{ post.item }}" has been successfully deleted.
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    setTimeout(function () {
+        let deleteMessage = document.getElementById('delete-message');
+        if (deleteMessage) {
+            deleteMessage.style.display = 'none';
+        }
+    }, 3000);
+</script>
+{% endblock %}
