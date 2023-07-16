@@ -3,12 +3,22 @@
 
 {% block content %}
 <div class="container">
-  <h1>Create a New Post</h1>
-  <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ postitem_form|crispy }}
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <div class="card">
+        <h5 class="card-header text-center">Create a New Post</h5>
+        <div class="card-body">
+          <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ postitem_form|crispy }}
 
-    <button class="btn btn-primary" type="submit">Create Post</button>
-  </form>
+            <div class="text-center mt-3">
+              <button class="btn btn-primary" type="submit">Create Post</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock %}
