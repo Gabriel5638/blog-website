@@ -126,8 +126,12 @@ def create_posts(request):
 
 class DeletePost(DeleteView):
     model = Post
-    template_name = 'delete_post.html'
+    template_name = 'user_posts.html' 
     success_url = reverse_lazy('home')
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(request, 'Post has been successfully deleted.')
+        return super().delete(request, *args, **kwargs)
 
 
 def about(request):
