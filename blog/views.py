@@ -109,11 +109,24 @@ def create_posts(request):
         postitem_form = CreationForm(request.POST, request.FILES)
         if postitem_form.is_valid():
             post = postitem_form.save(commit=False)
-            post.author_id = request.user.id  
+            post.author_id = request.user.id
             post.status = 1  # Set the default status to represent published
             post.save()
             messages.success(request, 'You have successfully posted an item!')
-            return redirect('home')
+
+            # Determine the category of the posted item
+            category = post.category
+
+            # Redirect to the respective category
+            if category == 'sports':
+                return redirect('sports')
+            elif category == 'music':
+                return redirect('music')
+            elif category == 'art':
+                return redirect('art')
+            elif category == 'gaming':
+                return redirect('gaming')
+
     else:
         postitem_form = CreationForm()
 
@@ -127,15 +140,14 @@ def create_posts(request):
 class DeletePost(DeleteView):
     model = Post
     template_name = 'user_posts.html' 
-    success_url = reverse_lazy('home')
+    success_message = 'Post has been successfully deleted.'
+
+    def get_success_url(self):
+        return self.request.META.get('HTTP_REFERER') or reverse('home')
 
     def delete(self, request, *args, **kwargs):
-        messages.success(request, 'Post has been successfully deleted.')
+        messages.success(request, self.success_message)
         return super().delete(request, *args, **kwargs)
-
-
-def about(request):
-    return render(request, "about.html")
 
 
 class PostLike(View):
