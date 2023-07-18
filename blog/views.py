@@ -10,6 +10,7 @@ from django.contrib import messages
 from django.shortcuts import redirect
 from django.db.models import Count
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.paginator import Paginator
 
 
 class PostList(generic.ListView):
@@ -166,7 +167,12 @@ def sports_view(request):
         category='sports',
         status=1
     ).order_by('-created_on')
-    return render(request, 'sports.html', {'posts': sports_posts})
+
+    paginator = Paginator(sports_posts, 6)  # Display 6 posts per page
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    return render(request, 'sports.html', {'page_obj': page_obj})
 
 
 def music_view(request):
@@ -174,7 +180,12 @@ def music_view(request):
         category='music',
         status=1
     ).order_by('-created_on')
-    return render(request, 'music.html', {'posts': music_posts})
+
+    paginator = Paginator(music_posts, 6)  # Display 6 posts per page
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    return render(request, 'music.html', {'page_obj': page_obj})
 
 
 def art_view(request):
@@ -182,7 +193,12 @@ def art_view(request):
         category='art',
         status=1
     ).order_by('-created_on')
-    return render(request, 'art.html', {'posts': art_posts})
+
+    paginator = Paginator(art_posts, 6)  # Display 6 posts per page
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    return render(request, 'art.html', {'page_obj': page_obj})
 
 
 def gaming_view(request):
@@ -190,4 +206,9 @@ def gaming_view(request):
         category='gaming',
         status=1
     ).order_by('-created_on')
-    return render(request, 'gaming.html', {'posts': gaming_posts})
+
+    paginator = Paginator(gaming_posts, 6)  # Display 6 posts per page
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    return render(request, 'gaming.html', {'page_obj': page_obj})
