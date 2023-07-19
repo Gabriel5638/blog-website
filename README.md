@@ -127,4 +127,39 @@ The website's structure is divided into eight pages. However, when the user is s
 -**Trending** page allows the user to view the most liked posts based on the amount of likes.<br>
 
 * FLOWCHARTS
+The Flowchart for my program was created using <b>LucidChart</b> and it visually represents how the system works.<br>
+[![N|Solid](static/images/chart.png)](static/images/chart.png)<br><br>
 
+### Skeleton<hr>
+**Wireframes**<br>
+In the design phase of the website I used Balsamiq to create wireframes in order to get an idea how the site will look.<br>
+
+![header](static/images/wireframe1.png)
+
+![header](static/images/wireframe2.png)
+
+![header](static/images/wireframe3.png)
+
+![header](static/images/wireframe4.png)
+
+![header](static/images/wireframe5.png)
+
+![header](static/images/wireframe6.png)
+
+![header](static/images/wireframe7.png)
+
+![header](static/images/wireframe8.png)
+
+![header](static/images/wireframe9.png)
+
+![header](static/images/wireframe10.png)
+
+![header](static/images/wireframe11.png)
+
+![header](static/images/wireframe12.png)
+
+**Database**<br>
+The project uses the PostgreSQL for storing the data and cloudinary for storing images<br>
+below is a relational database model that I created before making the Post model for my website.
+![header](static/images/diagram.png)
+                            
