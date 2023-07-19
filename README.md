@@ -80,7 +80,6 @@ This site was created respecting the Five Planes Of Website Design:<br>
 |                                       |6B| As a user, I want to explore blog posts categorized by topics like sports, music, gaming or art|
 
 
-
 **Project Goal:**<br>
 Create a blog website similar to reddit or tumblr with 4 categories where users can share like and comment on posts.
 
