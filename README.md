@@ -72,7 +72,8 @@ This site was created respecting the Five Planes Of Website Design:<br>
 |                                       |4B| As a logged-in user, I want to leave comments on blog posts, fostering a sense of community and allowing me to engage with other bloggers|
 |                                       |4C| As a user, I want the option to share captivating blog posts on social media platforms like Facebook and Twitter, spreading inspiration to a wider audience|
 |**USER PROFILE**                       |  ||
-|                                       |5A| As a logged-in user, I want to access a personalized profile page that displays my published blog posts|
+|                                       |5A| As a logged-in user, I want to access a personalized profile page that displays my published blog 
+| posts|
 |                                       |5B| As a logged-in user, I want to have my account name displayed on the post|
 |                        
 |**DISCOVERY**                          |  ||
