@@ -76,7 +76,7 @@ This site was created respecting the Five Planes Of Website Design:<br>
 |                                       |5B| As a logged-in user, I want to have my account name displayed on the post|
 |                        
 |**DISCOVERY**                          |  ||
-|                                       |6A| As a user, I want to discover trending or popular blog posts to stay updated with the latest discussions and ideas|
+|                                       |6A| As a user, I want to discover trending or popular blog posts to stay updated with the latest discussions and ideas.|
 |                                       |6B| As a user, I want to explore blog posts categorized by topics like sports, music, gaming or art.|
 
 **Project Goal:**<br>
@@ -162,4 +162,24 @@ In the design phase of the website I used Balsamiq to create wireframes in order
 The project uses the PostgreSQL for storing the data and cloudinary for storing images<br>
 below is a relational database model that I created before making the Post model for my website.
 ![header](static/images/diagram.png)
-                            
+
+### Surface<hr>
+#### Color Scheme
+Colors primarly used were blue gradient black,white, gray and red. I found that these colors did not cause eye strain after testing some others<br>
+* List of main and secondary colors used for buttons and to design scrollbar<br>
+<img src="static/images/blue.png" width="30%"><br>
+<img src="static/images/grey.png" width="30%"><br>
+<img src="static/images/grey2.png" width="30%"><br>
+<img src="static/images/red.png" width="30%"><br>
+<img src="static/images/black.png" width="30%"><br>                     
+<img src="static/images/scroller.png" width="30%"><br> 
+<img src="static/images/white.png" width="30%"><br> 
+
+#### Fonts
+The fonts I used for this site were imported from [Google Fonts](https://fonts.google.com/):<br>
+
+## Agile Methodology
+In order to complete this project I have used the Agile Methodology. This involves breaking down the project into smaller tasks called User Stories. These user stories were added using githubs Issues functionality. Each user story was made into an issue and added to the projects kanban board. After each user story was coded into the websites functionality I would move the issue from "To Do" Column into "In Progress" and eventually into "Done" column depending what stage of development it was.
+The live board can be accessed [here](https://github.com/users/Gabriel5638/projects/6/views/1).
+<img src="static/images/progress.png"><br>
+<img src="static/images/finished.png"><br>
