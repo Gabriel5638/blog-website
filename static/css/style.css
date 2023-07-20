@@ -152,6 +152,16 @@ body {
   color: #000;
 }
 
+.edit-delete-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.edit-delete-buttons button {
+  margin-right: 5px;
+ 
+}
+
 .link {
   color: #23BBBB;
   text-decoration: none;

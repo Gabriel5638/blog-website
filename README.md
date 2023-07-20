@@ -310,7 +310,8 @@ Every user that is logged in can acess the create post feature, this feature all
 ## Testing
 The testing documentation can be found at [TESTING.MD](TESTING.MD)
 
-2. Setting up Heroku
+## Deployment
+- Setting up Heroku
 
     * Go to the Heroku website (https://www.heroku.com/) 
     * Login to Heroku and choose *Create App* 
@@ -323,7 +324,7 @@ The testing documentation can be found at [TESTING.MD](TESTING.MD)
     * Navigate to the *Settings* tab
     * Reveal Config Vars and add your Cloudinary, Database URL (from Heroku-Postgres) and Secret key.    
 
-3. Deployment on Heroku
+- Deployment to Heroku
 
     * Go to the Deploy tab.
     * Choose the main branch for deploying and enable automatic deployment 
@@ -344,7 +345,13 @@ For creating a clone of the repository on your local machine, use<b>Clone</b>:
 <hr>
 
 ## Credits
-
-
-
+* "Hello Django" and "I think therefore I blog" lessons on code institute website, were used as heavy inspiration when designing this project.
+* Previous blog projects done by Code Institute students were also a big source of inspiration.
+* All the images uploaded on my website are from https://www.google.com/
+* The homepage website description was created with the help of Grammarly.
+* Favicon was created using [this](https://favicon.io/) website.
+* Used [this] (https://www.youtube.com/watch?v=74eaw_nM5tY) as a guide in creating my custom scrollbar for the website.
+* [StackOverflow] was used for looking up small problems I had with python e.g  how to fix line too long error.
+* Code Institute Tutors were also consulted on small issues.
+*  
 ## Acknowledgements

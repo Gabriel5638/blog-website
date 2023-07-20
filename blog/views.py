@@ -70,6 +70,26 @@ class PostDetail(View):
             },
         )
 
+
+def edit_post(request, post_slug):
+    post = get_object_or_404(Post, slug=post_slug)
+
+    if request.method == 'POST':
+        form = CreationForm(request.POST, request.FILES, instance=post)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Post edited successfully!')
+            return redirect('post_detail', post_slug=post.slug)
+    else:
+        form = CreationForm(instance=post)
+
+    context = {
+        'form': form,
+        'post': post
+    }
+
+    return render(request, 'edit_post.html', context)
+
     def post(self, request, post_slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=post_slug)

@@ -22,11 +22,15 @@
                         <a href="{% url 'post_detail' post_slug=post.slug %}" class="post-link">
                             <h2 class="card-title">{{ post.title }}</h2>
                         </a>
-                        <!-- Add a delete button for each post -->
-                        <form method="POST" action="{% url 'delete_post' post.slug %}">
-                            {% csrf_token %}
-                            <button type="submit" class="btn btn-danger">Delete</button>
-                        </form>
+                        <div class="edit-delete-buttons">
+                            <!-- Add a delete button for each post -->
+                            <form method="POST" action="{% url 'delete_post' post.slug %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                            <!-- Add an edit button for each post -->
+                            <a href="{% url 'edit_post' post_slug=post.slug %}" class="btn btn-warning">Edit</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -45,17 +49,4 @@
 </div>
 {% endif %}
 
-{% endblock %}
-
-{% block scripts %}
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        let deleteMessage = document.getElementById('delete-message');
-        if (deleteMessage) {
-            setTimeout(function() {
-                deleteMessage.style.display = 'none';
-            }, 3000);
-        }
-    });
-</script>
 {% endblock %}
