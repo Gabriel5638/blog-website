@@ -1,6 +1,5 @@
 ## BlogStar
 
-
 ![header](static/images/responsive.png)
 
 Blogstar is a blog website where users can easily sign up, create personalized accounts, and express their passions through engaging posts in a diverse range of categories. Whether you're an avid sports enthusiast, a music connoisseur, a dedicated gamer, or an art aficionado, Blogstar offers the perfect platform to share your unique perspectives and connect with like-minded individuals.
@@ -12,39 +11,37 @@ Live link to [BlogStar] (Add heroku link once website is fully deployed)
 
 
 
-## Table of contents
-  * [BlogStar](#BlogStar)
-  * [UX](#ux)
-    + [Strategy](#strategy)
-    + [Scope](#scope-hr-)
-    + [Structure](#structure-hr-)
-    + [Skeleton](#skeleton-hr-)
-    + [Surface](#surface-hr-)
-      - [Color Scheme](#color-scheme)
-      - [Fonts](#fonts)
-      - [Visual Effects](#visual-effects)
-  * [Agile Methodology](#agile-methodology)
-  * [Features](#features)
-    + [Existing Features](#existing-features)
-      - [Create bookings](#create-bookings)
-      - [Reviews](#reviews)
-      - [Menu](#menu)
-      - [Profiles](#profiles)
-      - [Staff bookings management](#staff-bookings-management)
-    + [Future Feature Considerations](#future-feature-considerations)
-  * [Responsive Layout and Design](#responsive-layout-and-design)
-  * [Tools Used](#tools-used)
-    + [Python packages](#python-packages)
-  * [Testing](#testing)
-  * [Deployment](#deployment)
-    + [Deploy on heroku](#deploy-on-heroku)
-    + [FORK THE REPOSITORY](#fork-the-repository)
-    + [CLONE THE REPOSITORY](#clone-the-repository)
-  * [Credits](#credits)
-    + [Content](#content)
-    + [Media](#media)
-    + [Code](#code)
-  * [Acknowledgements](#acknowledgements)
+## Table of Contents
+* [BlogStar](#blogstar)
+* [UX](#ux)
+  - [Strategy](#strategy)
+  - [Scope](#scope)
+  - [Structure](#structure)
+  - [Skeleton](#skeleton)
+  - [Surface](#surface)
+    - [Color Scheme](#color-scheme)
+    - [Fonts](#fonts)
+    - [Visual Effects](#visual-effects)
+* [Agile Methodology](#agile-methodology)
+* [Features](#features)
+  - [Existing Features](#existing-features)
+    - [Create Post](#create-post)
+    - [Comments](#comments)
+    - [Trending](#trending)
+    - [Profiles](#profiles)
+    - [Categories](#categories)
+    - [Icons](#icons)
+    - [Scrollbar](#scrollbar)
+* [Responsive Layout and Design](#responsive-layout-and-design)
+* [Tools Used](#tools-used)
+  - [Python packages](#python-packages)
+* [Testing](#testing)
+* [Deployment](#deployment)
+  - [Fork the Repository](#fork-the-repository)
+  - [Clone the Repository](#clone-the-repository)
+* [Credits](#credits)
+* [Acknowledgements](#acknowledgements)
+
 
 
 
