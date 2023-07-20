@@ -188,4 +188,58 @@ The live board can be accessed [here](https://github.com/users/Gabriel5638/proje
 
 ## Features
 ### Existing Features<hr>
-#### Create bookings
+#### Create Post
+Every user that is logged in can acess the create post feature, this feature allows the user to create their desired post by filling in the sections.<br><br>
+* Title,Content and category are mandatory fields that the user who wants to create a post must fill in.
+
+<img src="static/images/createpost.png" width="60%"><br><br>
+
+* Image, user can choose a desired image to feature on the post or they can leave it blank and a placeholder image will be uploaded instead.<br>
+
+<img src="static/images/placeholder.png" width="60%"><br><br>
+
+### Comments
+* The comment section displays a curated list of comments that the user can read through and post their own once the admin has verified the comments as not insulting, or offensive in any other way.
+
+<img src="static/images/comments.png" width="60%"><br><br>
+
+### Trending
+
+* The trending section allows the users to view what posts are popular based on the number of likes that the post receives.
+
+<img src="static/images/trending.png" width="60%"><br><br>
+
+#### Profiles
+
+* The user can create a personalized profile that will display their username at the top of the page once they log in.
+
+<img src="static/images/signup.png" width="60%"><br><br>
+<img src="static/images/name.png" width="60%"><br><br>
+
+* The your post section allows the user to delete their posts if they want.
+
+<img src="static/images/yourpost.png" width="60%"><br><br>
+
+### Categories
+* The user can choose from multiple categories to post in sports,gaming music and art.
+
+<img src="static/images/categories.png" width="60%"><br><br>
+
+### Icons
+* Posts can be liked by pressing the heart icon this also keeps track of what posts are trending by the number of likes.
+* The share button shows all the social media platforms the post can be shared to.
+* The number of comments is displayed beside the comment icon.
+
+<img src="static/images/icons.png" width="60%"><br><br>
+
+### Scrollbar
+* Custom scrollbar that lights up red when clicked or hovered over, created using css. 
+
+<img src="static/images/scrollbar.png"><br><br>
+
+
+### Toggle
+
+* Navbar can be toggled  on smaller screens for better browsing on phones and tablets.
+
+<img src="static/images/toggle.png"><br><br>

@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['blog-star.herokuapp.com',
-                 '8000-gabriel5638-blogwebsite-vrndp4etmrz.ws-eu101.gitpod.io'
+                 '8000-gabriel5638-blogwebsite-vrndp4etmrz.ws-eu102.gitpod.io'
                  ]
 
 # Application definition
