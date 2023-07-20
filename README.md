@@ -185,3 +185,7 @@ In order to complete this project I have used the Agile Methodology. This involv
 The live board can be accessed [here](https://github.com/users/Gabriel5638/projects/6/views/1).
 <img src="static/images/progress.png"><br>
 <img src="static/images/finished.png"><br>
+
+## Features
+### Existing Features<hr>
+#### Create bookings
