@@ -53,32 +53,30 @@ This site was created respecting the Five Planes Of Website Design:<br>
 ### Strategy<hr>
 **User Stories:** <br>
 
-|   EPIC                                |ID|                                User Story                                                   |
-| :-------------------------------------|--|:------------------------------------------------------------------------------------------- |
-|**CONTENT AND NAVIGATION**             |  ||
-|                                       |1A| As a user,  I want the blog website to have a clear and intuitive navigation menu |             
-|                                       |1B| As a user, As a user, I want to find relevant and captivating content about various topics shared by other bloggers|
-|                                       |1C| As a user, As a user, I want the website's design to be aesthetically pleasing and align with the blog's theme|
-|**USER REGISTRATION/AUTENTHICATION**   |  || 
-|                                       |2A| As a user, I want a seamless sign-up process to create my personalized account on the blog website|
-|                                       |2B| As a user, I want to be able to log in to the website using my email and password securely|
-|                                       |2C| As a user, I want the option to log out from my account easily whenever I wish to|
-|**BLOG POSTS**                         |  ||
-|                                       |3A| As a logged-in user, I want to be able to be able to delete or create my blog posts, allowing me to share my thoughts and experiences|
-|                                       |3B| As a user, I want to read engaging blog posts on diverse topics, inspiring me to explore new interests|
-|                                       |3C| As a user, I want to be able to share images with my posts.
-|**INTERACTION**                        |  ||
-|                                       |4A| As a logged-in user, I want the ability to like blog posts that resonate with me|
-|                                       |4B| As a logged-in user, I want to leave comments on blog posts, fostering a sense of community and allowing me to engage with other bloggers|
-|                                       |4C| As a user, I want the option to share captivating blog posts on social media platforms like Facebook and Twitter, spreading inspiration to a wider audience|
-|**USER PROFILE**                       |  ||
-|                                       |5A| As a logged-in user, I want to access a personalized profile page that displays my published blog 
-| posts|
-|                                       |5B| As a logged-in user, I want to have my account name displayed on the post|
-|                        
-|**DISCOVERY**                          |  ||
-|                                       |6A| As a user, I want to discover popular blog posts to stay updated with the latest discussions|
-|                                       |6B| As a user, I want to explore blog posts categorized by topics like sports, music, gaming or art|
+| EPIC                                | ID | User Story                                                                                                  |
+| :---------------------------------- | -- | ----------------------------------------------------------------------------------------------------------- |
+| **CONTENT AND NAVIGATION**          |    |                                                                                                             |
+|                                     | 1A | As a user, I want the blog website to have a clear and intuitive navigation menu                           |
+|                                     | 1B | As a user, I want to find relevant and captivating content about various topics shared by other bloggers   |
+|                                     | 1C | As a user, I want the website's design to be aesthetically pleasing and align with the blog's theme        |
+| **USER REGISTRATION/AUTHENTICATION** |    |                                                                                                             |
+|                                     | 2A | As a user, I want a seamless sign-up process to create my personalized account on the blog website         |
+|                                     | 2B | As a user, I want to be able to log in to the website using my email and password securely                |
+|                                     | 2C | As a user, I want the option to log out from my account easily whenever I wish to                          |
+| **BLOG POSTS**                      |    |                                                                                                             |
+|                                     | 3A | As a logged-in user, I want to be able to delete or create my blog posts, allowing me to share my thoughts and experiences |
+|                                     | 3B | As a user, I want to read engaging blog posts on diverse topics, inspiring me to explore new interests    |
+|                                     | 3C | As a user, I want to be able to share images with my posts.                                                |
+| **INTERACTION**                     |    |                                                                                                             |
+|                                     | 4A | As a logged-in user, I want the ability to like blog posts that resonate with me                           |
+|                                     | 4B | As a logged-in user, I want to leave comments on blog posts, fostering a sense of community and allowing me to engage with other bloggers |
+|                                     | 4C | As a user, I want the option to share captivating blog posts on social media platforms like Facebook and Twitter, spreading inspiration to a wider audience |
+| **USER PROFILE**                    |    |                                                                                                             |
+|                                     | 5A | As a logged-in user, I want to access a personalized profile page that displays my published blog posts    |
+|                                     | 5B | As a logged-in user, I want to have my account name displayed on the post                                  |
+| **DISCOVERY**                       |    |                                                                                                             |
+|                                     | 6A | As a user, I want to discover popular blog posts to stay updated with the latest discussions              |
+|                                     | 6B | As a user, I want to explore blog posts categorized by topics like sports, music, gaming, or art          |
 
 
 **Project Goal:**<br>
