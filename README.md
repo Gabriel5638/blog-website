@@ -238,8 +238,118 @@ Every user that is logged in can acess the create post feature, this feature all
 <img src="static/images/scrollbar.png"><br><br>
 
 
-### Toggle
+### Responsive Layout and Design
 
 * Navbar can be toggled  on smaller screens for better browsing on phones and tablets.
 
 <img src="static/images/toggle.png"><br><br>
+
+**Tested devices:**
+
+    - Moto G4 
+    - iPhone SE 
+    - iPhone XR 
+    - iPhone 11 
+    - iPhone 13
+    - iPhone 5/SE 
+    - iPhone 6/7/8 
+    - Ipad
+    - Ipad Air 
+    - Ipad Mini
+    - Ipad Pro 
+    - Pixel 5 
+    - Surface Duo 
+    - Surface Pro 7 
+    - Nest Hub 
+    - Nest Hub Max
+    - Samsung Galaxy S20 Ultra 
+    - Samsung Galaxy S8 
+    - Galaxy Note 2 
+    - Galaxy Tab S4
+    - Dell inspiron
+
+
+## Tools Used
+[GitHub](https://github.com/) - used for hosting the source code of the program<br>
+[Heroku](https://dashboard.heroku.com/) - used for deploying the project<br>
+[Balsamiq](https://balsamiq.com/wireframes/) - for creating the wireframes<br>
+[LucidChart](https://www.lucidchart.com/) - used for creating the Flowchart and Database relational schema<br>
+[Favicon.io](https://favicon.io/) - used for generating the website favicon<br>
+[Diffchecker](https://www.diffchecker.com/) - used for comparing the code<br>
+[Grammarly](https://app.grammarly.com/) - for correcting text content<br>
+[Font Awesome](https://fontawesome.com/) - for creating atractive UX with icons<br>
+[Bootstrap5](https://getbootstrap.com/) - for adding predifined styled elements and creating responsiveness<br>
+[Google Fonts](https://fonts.google.com/) - for typography<br>
+[JsHint](https://jshint.com/) - used for validating the javascript code<br>
+[PEP8 Validator](http://pep8online.com/) - used for validating the python code<br>
+[HTML - W3C HTML Validator](https://validator.w3.org/#validate_by_uri+with_options) - used for validating the HTML<br>
+[CSS - Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_uri) - used for validating the CSS<br>
+[Chrome Del Tools](https://developer.chrome.com/docs/devtools/) - for debugging the project<br>
+[Cloudinary](https://cloudinary.com/) - for storing images<br>
+[LightHouse](https://developer.chrome.com/docs/lighthouse/overview/) - for testing performance<br>
+[ElephantSQL](https://www.elephantsql.com/) - for storing data <br>
+
+### Python packages
+
+* asgiref
+* black
+* click
+* cloudinary
+* dj-database-url
+* dj3-cloudinary-storage
+* Django
+* django-allauth
+* django-crispy-forms
+* django-summernote
+* gunicorn
+* oauthlib
+* pathspec
+* psycopg2
+* PyJWT
+* python3-openid
+* pytz
+* requests-oauthlib
+* sqlparse
+* urllib3
+
+## Testing
+The testing documentation can be found at [TESTING.MD](TESTING.MD)
+
+2. Setting up Heroku
+
+    * Go to the Heroku website (https://www.heroku.com/) 
+    * Login to Heroku and choose *Create App* 
+    * Click *New* and *Create a new app*
+    * Choose a name and select your location
+    * Go to the *Resources* tab 
+    * From the Resources list select *Heroku Postgres*
+    * Navigate to the *Deploy* tab
+    * Click on *Connect to Github* and search for your repository
+    * Navigate to the *Settings* tab
+    * Reveal Config Vars and add your Cloudinary, Database URL (from Heroku-Postgres) and Secret key.    
+
+3. Deployment on Heroku
+
+    * Go to the Deploy tab.
+    * Choose the main branch for deploying and enable automatic deployment 
+    * Select manual deploy for building the App 
+    
+### Fork the repository
+For creating a copy of the repository on your account and change it without affecting the original project, use<b>Fork</b> directly from GitHub:
+- On [My Repository Page](https://github.com/Gabriel5638?tab=repositories), press <i>Fork</i> in the top right of the page
+- A forked version of my project will appear in your repository<br></br>
+
+### Clone the repository
+For creating a clone of the repository on your local machine, use<b>Clone</b>:
+- On [My Repository Page](https://github.com/Gabriel5638/blog-website), click the <i>Code</i> green button, right above the code window
+- Chose from <i>HTTPS, SSH and GitClub CLI</i> format and copy (preferably <i>HTTPS</i>)
+- In your <i>IDE</i> open <i>Git Bash</i>
+- Enter the command <code>git clone</code> followed by the copied URL
+- Your clone was created
+<hr>
+
+## Credits
+
+
+
+## Acknowledgements
