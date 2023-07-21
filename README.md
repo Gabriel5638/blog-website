@@ -6,7 +6,7 @@ Blogstar is a blog website where users can easily sign up, create personalized a
 
 On Blogstar, the user can explore a wide range of topics, read insightful posts from fellow users, and leave comments to join the conversation. The user can show appreciation for posts by liking them and share captivating content on popular social media platforms like Facebook and Twitter effortlessly.
 
-Live link to [BlogStar] (https://blog-star.herokuapp.com/)
+Live link to [BlogStar](https://blog-star.herokuapp.com/)
 
 
 ## Table of Contents
