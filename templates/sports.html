@@ -2,6 +2,7 @@
 
 {% block content %}
 
+<!-- Template for displaying sports-related posts -->
 <div class="container">
     <h1 class="text-center">Sports Posts</h1>
     <div class="row justify-content-center">
@@ -9,22 +10,28 @@
         <div class="col-md-4">
             <div class="card mb-4">
                 <div class="image-container">
+                    <!-- Check if the post has a featured image -->
                     {% if "placeholder" in post.featured_image.url %}
+                        <!-- Display a placeholder image if no featured image is available -->
                         <img class="card-img-top" src="https://www.tandempm.ie/wp-content/uploads/placeholder-80.png">
                     {% else %}
+                        <!-- Display the featured image if available -->
                         <img src="{{ post.featured_image.url }}" class="card-img-top" alt="Featured Image">
                     {% endif %}
                     <div class="image-flash">
+                        <!-- Display the author's name -->
                         <p class="author">Author: {{ post.author }}</p>
                     </div>
                 </div>
                 <div class="card-body">
                     {% if post.slug %}
+                        <!-- If post has a slug, display the title and excerpt as links to post detail -->
                         <a href="{% url 'post_detail' post_slug=post.slug %}" class="post-link">
                             <h2 class="card-title">{{ post.title }}</h2>
                             <p class="card-text">{{ post.excerpt }}</p>
                         </a>
                     {% else %}
+                        <!-- If no slug available, display the title and excerpt without link -->
                         <h2 class="card-title">{{ post.title }}</h2>
                         <p class="card-text">{{ post.excerpt }}</p>
                         <p>No slug available</p>
@@ -37,6 +44,7 @@
         {% endfor %}
     </div>
 
+    <!-- Pagination for navigating through posts -->
     {% if page_obj.has_other_pages %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">

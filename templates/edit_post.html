@@ -1,17 +1,30 @@
-{% extends 'base.html' %}
+     {% extends 'base.html' %}
 
-{% block content %}
-<div class="container">
-    <h1>Edit Post</h1>
-    {% if messages %}
-    <div class="alert alert-success mt-3" role="alert">
-        {{ messages }}
-    </div>
-    {% endif %}
-    <form id="edit-post-form" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Save Changes</button>
-    </form>
-</div>
-{% endblock %}
+     <!-- Template for editing the blog post. Includes fields for title, featured image, content, and category.
+          Form data is submitted using "post" method with CSRF token for security. Success messages are shown in an alert. -->
+     {% block content %}
+     <div class="container">
+         <h1>Edit Post</h1>
+         {% if messages %}
+         <div class="alert alert-success mt-3" role="alert">
+             {{ messages }}
+         </div>
+         {% endif %}
+         <form id="edit-post-form" method="post" enctype="multipart/form-data">
+             {% csrf_token %}
+             {{ form.as_p }}
+             <button type="submit" class="btn btn-primary">Save Changes</button>
+         </form>
+         
+         {% if comments %}
+         <h2>Edit Comments</h2>
+         {% for comment in comments %}
+         <form method="post" id="edit-comment-form-{{ comment.id }}">
+             {% csrf_token %}
+             {{ comment_form.as_p }}
+             <button type="submit" class="btn btn-primary">Save Comment</button>
+         </form>
+         {% endfor %}
+         {% endif %}
+     </div>
+     {% endblock %}

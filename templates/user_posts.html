@@ -1,25 +1,33 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<!-- Template for displaying user's own posts -->
 <div class="container">
+    <!-- Heading for user's posts -->
     <h1>Your Posts</h1>
     {% if user_posts %}
         <div class="row">
+            <!-- Loop through each post -->
             {% for post in user_posts %}
             <div class="col-md-4">
                 <div class="card mb-4">
                     <div class="image-container">
+                        <!-- Check if the post has a featured image -->
                         {% if "placeholder" in post.featured_image.url %}
+                            <!-- Display a placeholder image if no featured image is available -->
                             <img class="card-img-top" src="https://www.tandempm.ie/wp-content/uploads/placeholder-80.png">
                         {% else %}
+                            <!-- Display the featured image if available -->
                             <img src="{{ post.featured_image.url }}" class="card-img-top" alt="Featured Image">
                         {% endif %}
                         <div class="image-flash">
+                            <!-- Display the author's name -->
                             <p class="author">Author: {{ post.author }}</p>
                         </div>
                     </div>
                     <div class="card-body">
                         <a href="{% url 'post_detail' post_slug=post.slug %}" class="post-link">
+                            <!-- Display the post title -->
                             <h2 class="card-title">{{ post.title }}</h2>
                         </a>
                         <div class="edit-delete-buttons">
@@ -37,10 +45,12 @@
             {% endfor %}
         </div>
     {% else %}
+        <!-- If no posts available, display a message -->
         <p>No posts to delete. Please create a post.</p>
     {% endif %}
 </div>
 
+<!-- Show a success message if a post has been successfully deleted -->
 {% if deleted %}
 <div class="container">
     <div id="delete-message" class="alert alert-success mt-3" role="alert">
@@ -50,6 +60,7 @@
 {% endif %}
 
 <script>
+   // JavaScript function to confirm post deletion
    function confirmDelete() {
         const customMessage = "Are you sure you want to delete this post? It will be lost forever you know.";
         const confirmation = confirm(customMessage);

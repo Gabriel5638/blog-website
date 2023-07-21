@@ -18,6 +18,8 @@ class Post(models.Model):
     Fields:
     - title: The title of the post.
     - slug: The unique slug for the post's URL.
+    - image_caption: The caption for the featured image of the post.
+    - image_credit: The credit for the featured image of the post.
     - author: The author of the post (a foreign key to the User model).
     - featured_image: The featured image of the post.
     - excerpt: A brief summary or excerpt of the post.
@@ -28,6 +30,11 @@ class Post(models.Model):
     - category: The category of the post.
     - likes: Users who liked the post.
     """
+
+    STATUS = (
+        (0, "Draft"),
+        (1, "Published"),
+    )
 
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)

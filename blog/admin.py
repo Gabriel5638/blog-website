@@ -3,6 +3,9 @@ from .models import Post, Comment
 from django_summernote.admin import SummernoteModelAdmin
 
 
+""" Admin configuration """
+
+
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
 
