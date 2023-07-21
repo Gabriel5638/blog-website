@@ -6,13 +6,13 @@
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
-                <!-- Post title goes in these h1 tags -->
+                <!-- Post title  -->
                 <h1 class="post-title">{{ post.title }}</h1>
-                <!-- Post author goes before the | the post's created date goes after -->
+                <!-- Post author -->
                 <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                <!-- The featured image URL goes in the src attribute -->
+                <!-- Placeholder image here -->
                 {% if "placeholder" in post.featured_image.url %}
                 <img class="card-img-top" src="https://www.tandempm.ie/wp-content/uploads/placeholder-80.png" width="100%">
                 {% else %}
@@ -28,7 +28,7 @@
         <div class="col card mb-4 mt-3 left top">
             <div class="card-body">
                 <!-- The post content goes inside the card-text. -->
-                <!-- Use the | safe and linebreaksbr filters inside the template tags -->
+                <!-- Used the | safe and linebreaksbr filters inside the template tags -->
                 <p class="card-text">
                     {{ post.content | safe | linebreaksbr }}
                 </p>
@@ -48,7 +48,7 @@
                             {% else %}
                             <span class="text-secondary"><i class="far fa-heart"></i></span>
                             {% endif %}
-                            <!-- The number of likes goes before the closing strong tag -->
+                            <!-- The number of likes before the closing strong tag -->
                             <span class="text-secondary">{{ post.likes.count }}</span>
                         </strong>
                     </div>
@@ -87,7 +87,7 @@
                 {% for comment in comments %}
                 <div class="comments" style="padding: 10px;">
                     <p class="font-weight-bold">
-                        <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
+                        <!-- The commenter's name goes here -->
                         {{ comment.name }}
                         <span class="text-muted font-weight-normal">
                             <!-- The comment's created date goes here -->

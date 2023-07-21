@@ -1,13 +1,12 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic, View
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.views.generic.edit import DeleteView
 from django.contrib import messages
 from django.db.models import Count
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.paginator import Paginator
 from .models import Post
-from django.http import JsonResponse
 from .forms import CommentForm, CreationForm
 
 
@@ -32,14 +31,19 @@ class UserPosts(LoginRequiredMixin, generic.ListView):
     paginate_by = 10
 
     def get_queryset(self):
-        # Retrieve the posts created by the current user
-        queryset = Post.objects.filter(
-            author=self.request.user).order_by('-created_on')
+        """
+        Retrieve the posts created by the current user.
+        """
+        queryset = Post.objects.filter(author=self.request.user)
+        queryset = queryset.order_by('-created_on')
         return queryset
 
 
 class PostLike(View):
     def post(self, request, slug, *args, **kwargs):
+        """
+        Handle the like/unlike action for a post.
+        """
         post = get_object_or_404(Post, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
@@ -68,7 +72,9 @@ class TrendingPosts(generic.ListView):
     paginate_by = 6
 
     def get_queryset(self):
-        # Retrieve the posts ordered by the number of likes they have received
+        """
+        Retrieve the posts ordered by the number of likes they have received.
+        """
         queryset = Post.objects.annotate(num_likes=Count('likes')).filter(
             num_likes__gt=0).order_by('-num_likes')
         return queryset
@@ -81,11 +87,18 @@ class PostDetail(View):
     """
 
     def get(self, request, post_slug, *args, **kwargs):
+        """
+        Handle GET request for post detail page.
+        """
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=post_slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
         liked = post.likes.filter(id=request.user.id).exists()
-        post_url = request.build_absolute_uri(reverse('post_detail', args=[post.slug]))
+
+        # Build the post URL for sharing
+        post_url = request.build_absolute_uri(
+            reverse('post_detail', args=[post.slug])
+        )
 
         return render(
             request,
@@ -101,6 +114,9 @@ class PostDetail(View):
         )
 
     def post(self, request, post_slug, *args, **kwargs):
+        """
+        Handle POST request for posting comments on the post.
+        """
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=post_slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
@@ -112,9 +128,11 @@ class PostDetail(View):
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
-            messages.info(request, "Your comment has been submitted and is awaiting approval.")
+            messages.info(request, "Comment awaiting approval msg.")
 
-        post_url = request.build_absolute_uri(reverse('post_detail', args=[post.slug]))
+        post_url = request.build_absolute_uri(
+            reverse('post_detail', args=[post.slug])
+        )
 
         return render(
             request,
@@ -131,6 +149,9 @@ class PostDetail(View):
 
 
 def edit_post(request, post_slug):
+    """
+    Edit a post.
+    """
     post = get_object_or_404(Post, slug=post_slug)
 
     if request.method == 'POST':
@@ -167,6 +188,9 @@ class DeletePost(DeleteView):
 
 
 def create_posts(request):
+    """
+    Create a new post.
+    """
     if request.method == 'POST':
         postitem_form = CreationForm(request.POST, request.FILES)
         if postitem_form.is_valid():
@@ -195,6 +219,9 @@ def create_posts(request):
 
 
 def sports_view(request):
+    """
+    View for displaying sports posts.
+    """
     sports_posts = Post.objects.filter(
         category='sports',
         status=1
@@ -208,6 +235,9 @@ def sports_view(request):
 
 
 def music_view(request):
+    """
+    View for displaying music posts.
+    """
     music_posts = Post.objects.filter(
         category='music',
         status=1
@@ -221,6 +251,9 @@ def music_view(request):
 
 
 def art_view(request):
+    """
+    View for displaying art posts.
+    """
     art_posts = Post.objects.filter(
         category='art',
         status=1
@@ -234,6 +267,9 @@ def art_view(request):
 
 
 def gaming_view(request):
+    """
+    View for displaying gaming posts.
+    """
     gaming_posts = Post.objects.filter(
         category='gaming',
         status=1
