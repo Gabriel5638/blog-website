@@ -9,8 +9,6 @@ On Blogstar, the user can explore a wide range of topics, read insightful posts 
 Live link to [BlogStar] (Add heroku link once website is fully deployed)
 
 
-
-
 ## Table of Contents
 * [BlogStar](#blogstar)
 * [UX](#ux)
@@ -24,7 +22,6 @@ Live link to [BlogStar] (Add heroku link once website is fully deployed)
     - [Visual Effects](#visual-effects)
 * [Agile Methodology](#agile-methodology)
 * [Features](#features)
-  - [Existing Features](#existing-features)
     - [Create Post](#create-post)
     - [Comments](#comments)
     - [Trending](#trending)
@@ -47,7 +44,7 @@ Live link to [BlogStar] (Add heroku link once website is fully deployed)
 
 ## UX
 This site was created respecting the Five Planes Of Website Design:<br>
-### Strategy<hr>
+## Strategy
 **User Stories:** <br>
 
 | EPIC                                | ID | User Story                                                                                                  |
@@ -86,7 +83,7 @@ Create a blog website similar to reddit or tumblr with 4 categories where users 
 * To implement a secure signup process to protect user accounts;
 * To make the website available and functional on every device.<br><br>
 
-### Scope<hr>
+## Scope
 **Simple and intuitive User Experience**<br>
 * Ensure the navigation menu is visible and functional at every step;
 * Ensure every page has a suggestive name that fits its content;
@@ -109,7 +106,7 @@ Create a blog website similar to reddit or tumblr with 4 categories where users 
 **Responsiveness**<br>
 * Create a responsive design for desktop, tablet and mobile devices.<br><br>
 
-### Structure<hr>
+## Structure
 The website's structure is divided into eight pages. However, when the user is signed in, the structure dynamically changes to include additional features, such as "Post" and "Your Posts." This allows the signed-in user to create new posts and delete their own posts, enhancing their interaction and experience on the platform.
 
 -**Register/Login** pages give the user the possibility to create an account and authenticate for accessing different features;<br>
@@ -127,7 +124,7 @@ The website's structure is divided into eight pages. However, when the user is s
 The Flowchart for my program was created using <b>LucidChart</b> and it visually represents how the system works.<br>
 [![N|Solid](static/images/chart.png)](static/images/chart.png)<br><br>
 
-### Skeleton<hr>
+## Skeleton
 **Wireframes**<br>
 In the design phase of the website I used Balsamiq to create wireframes in order to get an idea how the site will look.<br>
 
@@ -160,7 +157,7 @@ The project uses the PostgreSQL for storing the data and cloudinary for storing 
 below is a relational database model that I created before making the Post model for my website.
 ![header](static/images/diagram.png)
 
-### Surface<hr>
+### Surface
 #### Color Scheme
 Colors primarly used were blue gradient black,white, gray and red. I found that these colors did not cause eye strain after testing some others<br>
 * List of main and secondary colors used for buttons and to design scrollbar<br>
@@ -322,7 +319,18 @@ Smart Displays:
 ## Testing
 The testing documentation can be found at [TESTING.MD](TESTING.MD)
 
-## Linter tests 
+# HTML, CSS, and Python Validation
+
+## CSS using CSS Validator
+![CSS Validator](static/images/css.png)
+
+## Python using pep8
+![Python pep8](static/images/python.png)
+
+## HTML using HTML Validator
+![HTML Validator](static/images/html.png)
+
+In this project, I have thoroughly tested the HTML, CSS, and Python code using their respective validators. As shown in the images above, no errors were found, ensuring that the code complies with best practices and standards.
 
 ## Deployment
 I've used Heroku to host my website and in the following steps I will be describing how to deploy your project to Heroku as well;
