@@ -322,6 +322,8 @@ Smart Displays:
 ## Testing
 The testing documentation can be found at [TESTING.MD](TESTING.MD)
 
+## Linter tests 
+
 ## Deployment
 I've used Heroku to host my website and in the following steps I will be describing how to deploy your project to Heroku as well;
 
