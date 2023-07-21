@@ -178,7 +178,11 @@ The fonts I used for this site were imported from [Google Fonts](https://fonts.g
 ## Agile Methodology
 In order to complete this project I have used the Agile Methodology. This involves breaking down the project into smaller tasks called User Stories. These user stories were added using githubs Issues functionality. Each user story was made into an issue and added to the projects kanban board. After each user story was coded into the websites functionality I would move the issue from "To Do" Column into "In Progress" and eventually into "Done" column depending what stage of development it was.
 The live board can be accessed [here](https://github.com/users/Gabriel5638/projects/6/views/1).
+
+Here I had a few left
 <img src="static/images/progress.png"><br>
+
+In this stage it was finished
 <img src="static/images/finished.png"><br>
 
 ## Features
@@ -194,9 +198,11 @@ Every user that is logged in can acess the create post feature, this feature all
 <img src="static/images/placeholder.png" width="60%"><br><br>
 
 ### Comments
-* The comment section displays a curated list of comments that the user can read through and post their own once the admin has verified the comments as not insulting, or offensive in any other way.
+* The comment section displays a curated list of comments that the user can read through and post their own once the admin has verified the comments as not insulting, or offensive in any other way.<br>
 
 <img src="static/images/comments.png" width="60%"><br><br>
+
+<img src="static/images/approval.png" width="60%"><br><br>
 
 ### Trending
 
@@ -206,7 +212,7 @@ Every user that is logged in can acess the create post feature, this feature all
 
 #### Profiles
 
-* The user can create a personalized profile that will display their username at the top of the page once they log in.
+* The user can create a personalized profile that will display their username at the top of the page once they signup.
 
 <img src="static/images/signup.png" width="60%"><br><br>
 <img src="static/images/name.png" width="60%"><br><br>
@@ -241,27 +247,33 @@ Every user that is logged in can acess the create post feature, this feature all
 
 **Tested devices:**
 
-    - Moto G4 
-    - iPhone SE 
-    - iPhone XR 
-    - iPhone 11 
-    - iPhone 13
-    - iPhone 5/SE 
-    - iPhone 6/7/8 
-    - Ipad
-    - Ipad Air 
-    - Ipad Mini
-    - Ipad Pro 
-    - Pixel 5 
-    - Surface Duo 
-    - Surface Pro 7 
-    - Nest Hub 
-    - Nest Hub Max
-    - Samsung Galaxy S20 Ultra 
-    - Samsung Galaxy S8 
-    - Galaxy Note 2 
-    - Galaxy Tab S4
-    - Dell inspiron
+   Smartphones:
+- Moto G4
+- iPhone SE
+- iPhone XR
+- iPhone 11
+- iPhone 13
+- iPhone 5/SE
+- iPhone 6/7/8
+- Pixel 5
+- Samsung Galaxy S20 Ultra
+- Samsung Galaxy S8
+
+Tablets:
+- iPad
+- iPad Air
+- iPad Mini
+- iPad Pro
+
+Laptops and Convertibles:
+- Surface Duo
+- Surface Pro 7
+- Dell Inspiron
+
+Smart Displays:
+- Nest Hub
+- Nest Hub Max
+
 
 
 ## Tools Used
@@ -311,47 +323,85 @@ Every user that is logged in can acess the create post feature, this feature all
 The testing documentation can be found at [TESTING.MD](TESTING.MD)
 
 ## Deployment
-- Setting up Heroku
+I've used Heroku to host my website and in the following steps I will be describing how to deploy your project to Heroku as well;
 
-    * Go to the Heroku website (https://www.heroku.com/) 
-    * Login to Heroku and choose *Create App* 
-    * Click *New* and *Create a new app*
-    * Choose a name and select your location
-    * Go to the *Resources* tab 
-    * From the Resources list select *Heroku Postgres*
-    * Navigate to the *Deploy* tab
-    * Click on *Connect to Github* and search for your repository
-    * Navigate to the *Settings* tab
-    * Reveal Config Vars and add your Cloudinary, Database URL (from Heroku-Postgres) and Secret key.    
+1. Access https://www.heroku.com and create an account or log in if you already have one.
 
-- Deployment to Heroku
+2. Once logged in, you will be directed to your dashboard.
 
-    * Go to the Deploy tab.
-    * Choose the main branch for deploying and enable automatic deployment 
-    * Select manual deploy for building the App 
+3. Click on the "New" button in the top right corner of the screen.
+
+4. From the drop-down menu, select "Create new app."
+
+5. Choose an App Name and select a region that's closest to your location, then click "Create app."
+
+6. Click on the "Settings" tab, then select "Config Vars."
+
+7. Click "Reveal Config Vars" and add the following configurations:
+   - CLOUDINARY_URL: <your cloudinary id goes here>
+   - DATABASE_URL: <your PostgreSQL database URL goes here>
+   - SECRET_KEY: <your secret key goes here>
+   - PORT: 8000
+   - DISABLE_COLLECTSTATIC: 1 (remove this before final deployment)
+
+8. In the "Buildpacks" field, click on the "Add buildpack" button.
+
+9. Choose "/heroku/python" and then save.
+
+10. Click on the "Deploy" tab at the top of the page.
+
+11. In the deployment method, choose GitHub and log in with your GitHub account.
+
+12. Choose the repository you want to deploy.
+
+13. Scroll down and click the "Deploy" button.
+
+14. Done! Your app is now deployed on Heroku.
+
     
 ### Fork the repository
 For creating a copy of the repository on your account and change it without affecting the original project, use<b>Fork</b> directly from GitHub:
-- On [My Repository Page](https://github.com/Gabriel5638?tab=repositories), press <i>Fork</i> in the top right of the page
-- A forked version of my project will appear in your repository<br></br>
+1. Go to the repository page you want to fork. For example, you can visit My Repository Page (https://github.com/Gabriel5638?tab=repositories).
+
+2. On the top-right corner of the repository page, click on the "Fork" button. This will create a forked copy of the repository on your GitHub account.
 
 ### Clone the repository
 For creating a clone of the repository on your local machine, use<b>Clone</b>:
-- On [My Repository Page](https://github.com/Gabriel5638/blog-website), click the <i>Code</i> green button, right above the code window
-- Chose from <i>HTTPS, SSH and GitClub CLI</i> format and copy (preferably <i>HTTPS</i>)
-- In your <i>IDE</i> open <i>Git Bash</i>
-- Enter the command <code>git clone</code> followed by the copied URL
-- Your clone was created
+1. Go to the repository page you want to clone. For instance, you can visit My Repository Page (https://github.com/Gabriel5638/blog-website).
+
+2. Click on the green "Code" button, located above the list of files.
+
+3. Choose the desired format for the clone link. For simplicity, select "HTTPS."
+
+4. Copy the provided URL.
+
+5. Open your preferred IDE or Git Bash terminal on your local machine.
+
+6. Use the "git clone" command followed by the copied URL to clone the repository. For example:
+
+7. Press Enter to initiate the cloning process.
+
+8. Your clone of the repository will be created in the specified directory on your local machine.
+
+
 <hr>
 
 ## Credits
 * "Hello Django" and "I think therefore I blog" lessons on code institute website, were used as heavy inspiration when designing this project.
 * Previous blog projects done by Code Institute students were also a big source of inspiration.
-* All the images uploaded on my website are from https://www.google.com/
-* The homepage website description was created with the help of Grammarly.
+* All the images uploaded on my website are from https://www.google.com/ .
+* The homepage website description and post writing were created with Grammarly.
 * Favicon was created using [this](https://favicon.io/) website.
-* Used [this] (https://www.youtube.com/watch?v=74eaw_nM5tY) as a guide in creating my custom scrollbar for the website.
-* [StackOverflow] was used for looking up small problems I had with python e.g  how to fix line too long error.
-* Code Institute Tutors were also consulted on small issues.
-*  
+* Used [this](https://www.youtube.com/) as a guide in creating my custom scrollbar for the website.
+* [StackOverflow](https://stackoverflow.com/) was used for looking up small problems I had with python e.g  how to fix line too long error.
+* This [video](https://www.youtube.com/) was used to help me understand a lot more about django framework.
+* This [video](https://www.youtube.com/) helped better my understanding of python. 
+* This [video](https://www.youtube.com/) helped explain the Views and URLs.
+* This [video](https://www.youtube.com/watch?v=5zNR3E6WRLE) helped me understand the django models.
+
 ## Acknowledgements
+* I would like to express my heartfelt gratitude to my mentor, Marcel, for his unwavering support, guidance, and encouragement throughout my learning journey at Code Institute. Marcel's expertise, patience, and willingness to help have been invaluable in helping me overcome challenges and grow as a developer.
+
+* I would also like to extend my thanks to all the dedicated tutors at Code Institute. Their expertise, constructive feedback, and prompt assistance have played a crucial role in shaping my skills and understanding of web development concepts.
+
+* I am immensely grateful to my family, with a special mention to my cousin, for their unwavering support during times of stress, as my cousin's attentive listening and thoughtful advice have been tremendously helpful to me.

@@ -14,8 +14,12 @@ from django.core.paginator import Paginator
 
 
 class PostList(generic.ListView):
+    """
+    Display a list of published posts ordered by the number of likes and creation date.
+    """
     model = Post
-    queryset = Post.objects.filter(status=1).annotate(like_count=Count('likes')).order_by("-like_count", "-created_on")
+    queryset = Post.objects.filter(status=1).annotate(
+        like_count=Count('likes')).order_by("-like_count", "-created_on")
     template_name = "index.html"
     paginate_by = 6
 
@@ -28,7 +32,8 @@ class UserPosts(LoginRequiredMixin, generic.ListView):
 
     def get_queryset(self):
         # Retrieve the posts created by the current user
-        queryset = Post.objects.filter(author=self.request.user).order_by('-created_on')
+        queryset = Post.objects.filter(
+            author=self.request.user).order_by('-created_on')
         return queryset
 
 
@@ -40,7 +45,8 @@ class TrendingPosts(generic.ListView):
 
     def get_queryset(self):
         # Retrieve the posts ordered by the number of likes they have received
-        queryset = Post.objects.annotate(num_likes=Count('likes')).filter(num_likes__gt=0).order_by('-num_likes')
+        queryset = Post.objects.annotate(num_likes=Count('likes')).filter(
+            num_likes__gt=0).order_by('-num_likes')
 
         return queryset
 
@@ -52,6 +58,33 @@ class PostDetail(View):
         comments = post.comments.filter(approved=True).order_by("-created_on")
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
+            liked = True
+
+        # Get the absolute URL of the current post
+        post_url = request.build_absolute_uri(
+            reverse('post_detail', args=[post.slug]))
+
+        return render(
+            request,
+            "post_detail.html",
+            {
+                "post": post,
+                "comments": comments,
+                "commented": False,
+                "liked": liked,
+                "comment_form": CommentForm(),
+                "post_url": post_url
+            },
+        )
+
+
+class PostDetail(View):
+    def get(self, request, post_slug, *args, **kwargs):
+        queryset = Post.objects.filter(status=1)
+        post = get_object_or_404(queryset, slug=post_slug)
+        comments = post.comments.filter(approved=True).order_by("-created_on")
+        liked = False
+        if post.likes.filter(id=request.user.id).exists():
             liked = True
 
         # Get the absolute URL of the current post
@@ -70,7 +103,42 @@ class PostDetail(View):
             },
         )
 
+    def post(self, request, post_slug, *args, **kwargs):
+        queryset = Post.objects.filter(status=1)
+        post = get_object_or_404(queryset, slug=post_slug)
+        comments = post.comments.filter(approved=True).order_by("-created_on")
+        liked = False
+        if post.likes.filter(id=request.user.id).exists():
+            liked = True
 
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            comment_form.instance.email = request.user.email
+            comment_form.instance.name = request.user.username
+            comment = comment_form.save(commit=False)
+            comment.post = post
+            comment.save()
+
+            # Add a message to indicate the comment is awaiting approval
+            messages.info(request, "Your comment has been submitted and is awaiting approval.")
+
+        # Get the absolute URL of the current post
+        post_url = request.build_absolute_uri(reverse('post_detail', args=[post.slug]))
+
+        return render(
+            request,
+            "post_detail.html",
+            {
+                "post": post,
+                "comments": comments,
+                "commented": True,
+                "comment_form": comment_form,
+                "liked": liked,
+                "post_url": post_url
+            },
+        )
+    
+      
 def edit_post(request, post_slug):
     post = get_object_or_404(Post, slug=post_slug)
 
