@@ -3,17 +3,11 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django.template.defaultfilters import slugify
 
-
-STATUS = (
-    (0, "Draft"),
-    (1, "Published"),
-)
-
 CATEGORIES = (
     ("sports", "Sports"),
     ("music", "Music"),
     ("art", "Art"),
-    ("gaming", "Gaming"), 
+    ("gaming", "Gaming"),
 )
 
 
@@ -39,15 +33,21 @@ class Post(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     image_caption = models.CharField(max_length=200, default='')
     image_credit = models.CharField(max_length=200, default=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="blog_posts"
+    )
     featured_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=1)
-    category = models.CharField(max_length=20, choices=CATEGORIES, default='sections')
-    likes = models.ManyToManyField(User, related_name='blogpost_like', blank=True)
+    category = models.CharField(
+        max_length=20, choices=CATEGORIES, default='sections'
+    )
+    likes = models.ManyToManyField(
+        User, related_name='blogpost_like', blank=True
+    )
 
     class Meta:
         ordering = ["-created_on"]
