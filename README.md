@@ -317,7 +317,7 @@ Smart Displays:
 * urllib3
 
 ## Testing
-The testing documentation can be found at [TESTING.MD](TESTING.MD)
+The testing documentation can be found at [TESTING.MD](https://github.com/Gabriel5638/blog-website/blob/main/TESTING.md)
 
 # HTML, CSS, and Python Validation
 
