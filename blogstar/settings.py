@@ -28,9 +28,13 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
+CSRF_TRUSTED_ORIGINS = ['blog-star.herokuapp.com']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 
 ALLOWED_HOSTS = ['blog-star.herokuapp.com',
                  '8000-gabriel5638-blogwebsite-vrndp4etmrz.ws-eu102.gitpod.io'
